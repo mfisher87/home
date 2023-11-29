@@ -1,0 +1,48 @@
+project:
+  type: "website"
+
+
+website:
+  title: "Our Home"
+  site-url: "https://mfisher87.github.io/home"
+  # site-path: "/home"  # Needed?
+
+  repo-url: &repo-url "https://github.com/mfisher87/home"
+  repo-actions:
+    - "edit"
+    - "source"
+    - "issue"
+
+  page-footer:
+    right: "This page is built with [Quarto](https://quarto.org/)."
+    left: "&copy; 2023"
+
+  sidebar:
+    style: "docked"
+    search: true
+    tools:
+      - icon: "github"
+        href: *repo-url
+    contents:
+      - text: "🚂 Changes"
+        href: "changes/index.md"
+      - text: "❓ How to"
+        href: "how-to/index.md"
+        contents: "how-to/*.md"
+      - text: "---"
+      - text: "🌱 Garden"
+        href: "garden/index.md"
+      - text: "💡 Lighting"
+        href: "lighting.md"
+      - text: "🛠️ Maintenance"
+        href: "maintenance/index.md"
+
+
+format:
+  html:
+    theme:
+      light: ["litera", "styles.scss"]
+      dark: ["darkly", "styles.scss"]
+    toc: true
+    # Turn on emoji shortcodes:
+    from: "markdown+emoji"
